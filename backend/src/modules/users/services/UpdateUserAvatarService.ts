@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import uploadConfig from '@config/upload';
 import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
