@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FiPower, FiClock } from 'react-icons/fi';
 import {
@@ -8,14 +8,18 @@ import {
   Profile,
   Content,
   Schedule,
-  Calendar,
   NextAppointment,
+  Section,
+  Appointment,
+  Calendar,
 } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   const { signOut, user } = useAuth();
 
   return (
@@ -61,6 +65,61 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/45277131?s=460&u=cfd7f5e2e8a85cf12693b36e5bc1ee7a891bdfd8&v=4"
+                  alt="Rafael Pallisser"
+                />
+
+                <strong>Rafael Pallisser</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/45277131?s=460&u=cfd7f5e2e8a85cf12693b36e5bc1ee7a891bdfd8&v=4"
+                  alt="Rafael Pallisser"
+                />
+
+                <strong>Rafael Pallisser</strong>
+              </div>
+            </Appointment>
+          </Section>
+          <Section>
+            <strong>Tarde</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/45277131?s=460&u=cfd7f5e2e8a85cf12693b36e5bc1ee7a891bdfd8&v=4"
+                  alt="Rafael Pallisser"
+                />
+
+                <strong>Rafael Pallisser</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
         <Calendar />
       </Content>
